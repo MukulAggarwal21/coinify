@@ -1,12 +1,18 @@
-
+import Navbar from './components/Navbar'
 import './App.css'
+import '@coreui/coreui/dist/css/coreui.min.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import { BrowserRouter as Router, Route , Routes } from 'react-router-dom';
 
 function App() {
 
   return (
-    <>
-      <h1>Cryptocurrency</h1>
-    </>
+    <Router>
+      <Navbar />
+     
+    </Router>
+
+
   )
 }
 
