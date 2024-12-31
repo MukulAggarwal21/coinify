@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import {
   CButton,
   CCollapse,
@@ -24,20 +24,20 @@ function Navbar() {
         <>
          <CNavbar expand="lg" className=" bg-black  h-20 text-white text-md">
       <CContainer fluid>
-        <CNavbarBrand className=' text-white font-bold font-serif  text-7xl  bg-yellow-700' href="/">Coinify</CNavbarBrand>
+        <CNavbarBrand className=' text-white font-bold font-serif  text-9xl ml-10 pr-4' href="/"><h1>Coinify</h1></CNavbarBrand>
         <CNavbarToggler onClick={() => setVisible(!visible)} />
         <CCollapse className="navbar-collapse" visible={visible}>
           <CNavbarNav className="me-auto">
             <CNavItem  >
-              <CNavLink className=' text-white' href="#" active>
+              <CNavLink className=' text-white  hover:bg-blue-500 mr-3' href="#" active>
                 Home
               </CNavLink>
             </CNavItem>
             <CNavItem>
-              <CNavLink className=' text-white' href="#">Link</CNavLink>
+              <CNavLink className=' text-white hover:bg-blue-500  mr-3' href="#">Link</CNavLink>
             </CNavItem>
             <CDropdown variant="nav-item" popper={false}>
-              <CDropdownToggle className=' text-white' color="secondary">Dropdown button</CDropdownToggle>
+              <CDropdownToggle className=' text-white hover:bg-blue-500  mr-3' color="secondary">Dropdown button</CDropdownToggle>
               <CDropdownMenu>
                 <CDropdownItem href="#">Action</CDropdownItem>
                 <CDropdownItem href="#">Another action</CDropdownItem>
@@ -46,7 +46,7 @@ function Navbar() {
               </CDropdownMenu>
             </CDropdown>
             <CNavItem>
-              <CNavLink href="#" className=' text-white'  disabled>
+              <CNavLink href="#" className=' text-white hover:bg-blue-500  mr-3'  disabled>
                 Disabled
               </CNavLink>
             </CNavItem>
