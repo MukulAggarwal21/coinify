@@ -6,6 +6,7 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+// import fetch from 'node-fetch';
 
 function createData(
   Assests: String,
@@ -27,6 +28,34 @@ const rows = [
   createData("XRP", "Gingerbread", 356, 16.0, 3.9, 49, 3.9, 3),
   createData("BNB", "Cupcake", 305, 3.7, 67, 4.0, 4.3, 6),
 ];
+
+const fetchData = async () => {
+    const url = 'https://deep-index.moralis.io/api/v2.2/market-data/global/market-cap';
+    // const apiKey = process.env.NEXT_PUBLIC_MORALIS_API_KEY;
+    const apiKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub25jZSI6ImNlY2RjMDY4LThhM2QtNDU4OS1iMjkzLTA3YjRhMzQzMzY4MCIsIm9yZ0lkIjoiNDI0MTk4IiwidXNlcklkIjoiNDM2MjcyIiwidHlwZUlkIjoiZDRjNTAzOGEtMDU1OS00MWEzLTliNGMtYWM5YjQ1ODUxMjY0IiwidHlwZSI6IlBST0pFQ1QiLCJpYXQiOjE3MzYwOTkwNTAsImV4cCI6NDg5MTg1OTA1MH0.5ZAw6kA-TEQQDeaAbwn1VFf-rNVH7AWfDotqgoBIKtI'
+
+    try {
+        const response = await fetch(url, {
+            method: 'GET',
+            headers: {
+                accept: 'application/json',
+                'X-API-Key': apiKey
+            }
+        });
+
+        if (!response.ok) {
+            console.error(`HTTP Error: ${response.status} ${response.statusText}`);
+            return;
+        }
+
+        const data = await response.json();
+        console.log('Fetched Data:', data);
+    } catch (error) {
+        console.error('Error fetching data:', error);
+    }
+};
+
+fetchData();
 
 function coinstable() {
   return (
