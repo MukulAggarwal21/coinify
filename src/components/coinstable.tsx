@@ -64,9 +64,7 @@ function coinstable() {
     const url =
       "https://deep-index.moralis.io/api/v2.2/market-data/global/market-cap";
     // const apiKey = process.env.NEXT_PUBLIC_MORALIS_API_KEY;
-    const apiKey =
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub25jZSI6ImNlY2RjMDY4LThhM2QtNDU4OS1iMjkzLTA3YjRhMzQzMzY4MCIsIm9yZ0lkIjoiNDI0MTk4IiwidXNlcklkIjoiNDM2MjcyIiwidHlwZUlkIjoiZDRjNTAzOGEtMDU1OS00MWEzLTliNGMtYWM5YjQ1ODUxMjY0IiwidHlwZSI6IlBST0pFQ1QiLCJpYXQiOjE3MzYwOTkwNTAsImV4cCI6NDg5MTg1OTA1MH0.5ZAw6kA-TEQQDeaAbwn1VFf-rNVH7AWfDotqgoBIKtI";
-
+    const apiKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub25jZSI6ImNlY2RjMDY4LThhM2QtNDU4OS1iMjkzLTA3YjRhMzQzMzY4MCIsIm9yZ0lkIjoiNDI0MTk4IiwidXNlcklkIjoiNDM2MjcyIiwidHlwZUlkIjoiZDRjNTAzOGEtMDU1OS00MWEzLTliNGMtYWM5YjQ1ODUxMjY0IiwidHlwZSI6IlBST0pFQ1QiLCJpYXQiOjE3MzYwOTkwNTAsImV4cCI6NDg5MTg1OTA1MH0.5ZAw6kA-TEQQDeaAbwn1VFf-rNVH7AWfDotqgoBIKtI';
     try {
       const response = await fetch(url, {
         method: "GET",
