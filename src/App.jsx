@@ -5,17 +5,30 @@ import Footer from './components/footer'
 import './App.css'
 import '@coreui/coreui/dist/css/coreui.min.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import News from './components/News'
+import { BrowserRouter as Router , Routes , Route} from 'react-router-dom';
 
-import { BrowserRouter as Router} from 'react-router-dom';
+
+
+function Home() {
+  return (
+    <>
+      <Herosection />
+      <Allcoins />
+      <Footer />
+    </>
+  );
+}
 
 function App() {
 
   return (
     <Router>
       <Navbar />
-     <Herosection/>
-     <Allcoins/>
-     <Footer/>
+     <Routes>
+      <Route path="/" element={<Home/>} />
+      <Route path="/News" element={<News/>} />
+     </Routes>
     </Router>
 
 
