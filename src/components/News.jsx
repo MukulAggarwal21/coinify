@@ -1,29 +1,68 @@
-import React from 'react'
 
-
-const url = 'https://cryptocurrency-news2.p.rapidapi.com/v1/cryptodaily';
-const options = {
-	method: 'GET',
-	headers: {
-		'x-rapidapi-key': '1ea24b3aafmsh6edcec90728c570p1116fbjsn87e296ebbd73',
-		'x-rapidapi-host': 'cryptocurrency-news2.p.rapidapi.com'
-	}
-};
-
-try {
-	const response = await fetch(url, options);
-	const result = await response.text();
-	console.log("News Coming is"+ result);
-} catch (error) {
-	console.error(error);
-}
+import React, { useState, useEffect } from 'react';
+import Newsitem from './Newsitem';
+import Spinner from './spinner';
+const url = "https://newsapi.org/v2/everything?q=cryptocurrency&from=2025-01-06&sortBy=publishedAt&apiKey=40a7c6a6321c4dfd82e8ca4e983a9f83"
 
 function News() {
+  const [articles, setArticles] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      setLoading(true);
+      try {
+        const response = await fetch(url);
+        const result = await response.json();
+        console.log(result.articles);
+        
+        setArticles(result.articles); 
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+      setLoading(false);
+    };
+
+    fetchData();
+  }, []); 
+
   return (
-    <div>
-      Hello
+    
+    <div className="container mt-4">
+    <center>
+          <h1 className="text-center text-red-900" style={{ margin: '30px 0px ' } }>
+            YOUR DAILY DOSE OF NEWS
+          </h1>
+        </center>
+
+
+      {loading &&
+        <div className=' my-56  mx-96  px-52'>
+      <Spinner/>
+      </div>
+       }
+       
+      <div className="row row-cols-1 row-cols-md-3 g-4">
+        {articles.length > 0 ? (
+          articles.map((element) => (
+            <div className="col" key={element.url}>
+              <Newsitem 
+                title={element.title ? element.title.slice(0, 65) : ''} 
+                imageUrl={element.urlToImage}
+                description={element.description ? element.description.slice(0, 74) + '.....' : 'Deep Dive into it through ReadMore to get more Updated right Now.....  '}
+                newsUrl={element.url}
+                author={element.author}
+                date={element.publishedAt}
+                source={element.source?.name}
+              />
+            </div>
+          ))
+        ) : (
+          !loading && <p>No news found.</p>
+        )}
+      </div>
     </div>
-  )
+  );
 }
 
-export default News
+export default News;
