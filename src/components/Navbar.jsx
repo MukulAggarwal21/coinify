@@ -43,7 +43,7 @@ function Navbar() {
                 </CNavLink>
               </CNavItem>
               <CNavItem>
-                <CNavLink className="text-white hover:underline mr-3" href="#">
+                <CNavLink className="text-white hover:underline mr-3" href="/News2">
                   Link
                 </CNavLink>
               </CNavItem>

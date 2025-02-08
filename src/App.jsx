@@ -6,7 +6,8 @@ import './App.css'
 import '@coreui/coreui/dist/css/coreui.min.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import News from './components/News'
-import { BrowserRouter as Router , Routes , Route} from 'react-router-dom';
+import News2 from './components/News2'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 
 
@@ -25,10 +26,12 @@ function App() {
   return (
     <Router>
       <Navbar />
-     <Routes>
-      <Route path="/" element={<Home/>} />
-      <Route path="/News" element={<News/>} />
-     </Routes>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/News" element={<News />} />
+        <Route path="/News2" element={<News2 />} />
+
+      </Routes>
     </Router>
 
 

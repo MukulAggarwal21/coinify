@@ -215,8 +215,6 @@ function coinstable() {
               >
                 1H % Change($)
               </TableCell>
-
-
             </TableRow>
           </TableHead>
           <TableBody>
