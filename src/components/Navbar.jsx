@@ -38,7 +38,7 @@ function Navbar() {
           <CCollapse className="navbar-collapse" visible={visible}>
             <CNavbarNav className="me-auto">
               <CNavItem>
-                <CNavLink className="text-white hover:underline mr-3" href="#" active>
+                <CNavLink className="text-white hover:underline mr-3" href="/" active>
                   Home
                 </CNavLink>
               </CNavItem>
