@@ -97,7 +97,7 @@ function News() {
   const fetchData = async (pageNum) => {
     setLoading(true);
     try {
-      const url = `${baseUrl}?q=cryptocurrency&from=2025-01-08&sortBy=publishedAt&page=${pageNum}&pageSize=${pageSize}&apiKey=${apiKey}`;
+      const url = `${baseUrl}?q=cryptocurrency&from=2025-01-31&sortBy=publishedAt&page=${pageNum}&pageSize=${pageSize}&apiKey=${apiKey}`;
       const response = await fetch(url);
       const result = await response.json();
       

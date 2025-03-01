@@ -2,7 +2,7 @@
 import  { useState, useEffect } from 'react';
 import Newsitem from './Newsitem';
 import Spinner from './spinner';
-const url = "https://newsapi.org/v2/everything?q=cryptocurrency&from=2025-01-08&sortBy=publishedAt&apiKey=40a7c6a6321c4dfd82e8ca4e983a9f83"
+const url = "https://newsapi.org/v2/everything?q=cryptocurrency&from=2025-01-31&sortBy=publishedAt&apiKey=40a7c6a6321c4dfd82e8ca4e983a9f83";
 
 //  function handleNextPage(){
      
